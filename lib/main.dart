@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iresenha/pages/home_page.dart';
+import 'package:iresenha/pages/name_entry_page.dart';
 import 'package:iresenha/pages/welcome_page.dart';
 
 void main() {
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/welcome': (_) => const WelcomePage(),
           '/home': (_) => const HomePage(),
+          '/nameentry': (_) => NameEntryPage(),
         });
   }
 }

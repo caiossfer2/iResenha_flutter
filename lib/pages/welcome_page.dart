@@ -24,7 +24,8 @@ class WelcomePage extends StatelessWidget {
               style: TextStyle(fontSize: 22),
             ),
             BlueButton(
-                onPressed: (() => Navigator.of(context).pushNamed('/home')),
+                onPressed: (() =>
+                    Navigator.of(context).pushNamed('/nameentry')),
                 text: 'Continuar')
           ],
         ),
