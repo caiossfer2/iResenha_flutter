@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:iresenha/components/name_text_field.dart';
+import 'package:iresenha/services/local_storage.dart';
 import 'package:iresenha/widgets/blue_button.dart';
 
 class NameEntryPage extends StatelessWidget {
   NameEntryPage({super.key});
 
-  final TextEditingController _controller = TextEditingController();
+  final TextEditingController _textController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +23,12 @@ class NameEntryPage extends StatelessWidget {
               ),
             ),
             NameTextField(
-              textController: _controller,
+              textController: _textController,
             ),
             BlueButton(
                 onPressed: () {
-                  // Navigator.of(context).pushNamed('/home');
+                  LocalStorage.setString('userName', _textController.text);
+                  Navigator.of(context).pushNamed('/home');
                 },
                 text: 'Continuar')
           ],
