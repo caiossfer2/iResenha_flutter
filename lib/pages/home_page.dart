@@ -24,7 +24,6 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         body: MainContainer(
-          hasGoBackButton: true,
           child: Center(child: Text('Olá, usuario')),
         ),
       ),

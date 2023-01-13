@@ -28,7 +28,8 @@ class NameEntryPage extends StatelessWidget {
             BlueButton(
                 onPressed: () {
                   LocalStorage.setString('userName', _textController.text);
-                  Navigator.of(context).pushNamed('/home');
+                  Navigator.of(context)
+                      .pushNamedAndRemoveUntil('/home', (Route route) => false);
                 },
                 text: 'Continuar')
           ],

@@ -14,7 +14,9 @@ class WelcomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            const PageTitle(),
+            const PageTitle(
+              title: 'Bem vindo ao iResenha',
+            ),
             const Image(
               image: AssetImage('assets/welcome-image.png'),
             ),

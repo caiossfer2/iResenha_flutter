@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 
 class PageTitle extends StatelessWidget {
-  const PageTitle({
-    Key? key,
-  }) : super(key: key);
+  const PageTitle({Key? key, required this.title}) : super(key: key);
+
+  final String title;
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    return Center(
       child: DecoratedBox(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             border: Border(
                 bottom: BorderSide(
           width: 6,
           color: Color.fromRGBO(35, 199, 215, 1),
         ))),
         child: Text(
-          'Bem vindo ao iResenha',
+          title,
           textAlign: TextAlign.center,
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.w700,
             fontSize: 34,
           ),
