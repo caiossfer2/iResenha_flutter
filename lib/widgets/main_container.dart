@@ -44,9 +44,10 @@ class _MainContainerState extends State<MainContainer> {
           color: const Color.fromARGB(237, 103, 242, 255),
           padding: const EdgeInsets.all(10),
           child: Container(
+            clipBehavior: Clip.hardEdge,
             decoration: const BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(10)),
-                color: Colors.white),
+                color: Colors.red),
             child: WillPopScope(
               onWillPop: () async {
                 return !await Navigator.maybePop(
