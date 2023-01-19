@@ -1,16 +1,16 @@
 class ActivityModel {
-  final int key;
+  final String key;
   final String name;
   final String type;
-  final String acessibility;
-  final String price;
-  final String participants;
+  final double acessibility;
+  final double price;
+  final int participants;
 
   ActivityModel(this.key, this.name, this.type, this.acessibility, this.price,
       this.participants);
 
   factory ActivityModel.fromJson(Map m) {
-    return ActivityModel(m['id'], m['name'], m['type'], m['acessibility'],
+    return ActivityModel(m['key'], m['activity'], m['type'], m['accessibility'],
         m['price'], m['participants']);
   }
 }

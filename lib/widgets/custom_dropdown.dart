@@ -8,7 +8,7 @@ class CustomDropdown extends StatefulWidget {
       required this.dropdownItemsList})
       : super(key: key);
 
-  final String dropdownValue;
+  final String? dropdownValue;
   final List<String> dropdownItemsList;
   final Function selectDropdownValue;
 
@@ -32,6 +32,14 @@ class _CustomDropdownState extends State<CustomDropdown> {
             size: 30,
           ),
           DropdownButton<String>(
+            hint: Row(
+              children: const [
+                SizedBox(
+                  width: 10,
+                ),
+                Text('Selecione a atividade'),
+              ],
+            ),
             value: widget.dropdownValue,
             elevation: 16,
             icon: const SizedBox.shrink(),
