@@ -46,13 +46,14 @@ class _NewActivityPageState extends State<NewActivityPage> {
 
   final TextEditingController _textEditingController = TextEditingController();
 
-  DateTime selectedDate = DateTime.now();
+   DateTime selectedDate = DateTime(2101);
 
   void setDate(DateTime date) {
     setState(() {
       selectedDate = date;
     });
   }
+
 
   @override
   Widget build(BuildContext context) {

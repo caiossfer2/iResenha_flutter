@@ -14,14 +14,17 @@ class _CustomDatePickerState extends State<CustomDatePicker> {
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
       context: context,
-      initialDate: widget.selectedDate,
+      initialDate: DateTime.now(),
       firstDate: DateTime(2015, 8),
       lastDate: DateTime(2101)
     );
     if (picked != null && picked != widget.selectedDate) {
       widget.setDate(picked);
+      setState(() => displayedText = "${picked.day}/${picked.month}/${picked.year}");
     }
   }
+
+  String displayedText = "Data Planejada";
 
   @override
   Widget build(BuildContext context) {
@@ -49,13 +52,22 @@ class _CustomDatePickerState extends State<CustomDatePicker> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text(
-                    "Data Planejada",
-                    style: TextStyle(
-                        fontSize: 17,
-                        color: Color.fromARGB(255, 112, 112, 112)),
-                  ),
+                children:  [
+                  if(displayedText == 'Data Planejada')...[
+                    const Text(
+                      'Data Planejada',
+                      style: TextStyle(
+                          fontSize: 17,
+                          color: Color.fromARGB(255, 112, 112, 112)),
+                      ),
+                  ]else...[
+                    Text(
+                      displayedText,
+                      style: const TextStyle(
+                          fontSize: 17,
+                          color: Color.fromARGB(255, 0, 0, 0)),
+                    ),
+                  ]
                 ],
               ),
             ),
