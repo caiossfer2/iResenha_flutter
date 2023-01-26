@@ -31,8 +31,8 @@ class NewActivityPage extends StatefulWidget {
 }
 
 class _NewActivityPageState extends State<NewActivityPage> {
+ 
   final blackTextStyle = const TextStyle(fontSize: fontSize);
-
   final blueTextStyle = const TextStyle(
     fontSize: fontSize,
     color: Color.fromRGBO(35, 199, 215, 1),

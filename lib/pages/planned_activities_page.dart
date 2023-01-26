@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:iresenha/widgets/page_title.dart';
+
+const double fontSize = 19;
+const blackTextStyle = TextStyle(fontSize: fontSize);
+const blueTextStyle = TextStyle(
+  fontSize: fontSize,
+  color: Color.fromRGBO(35, 199, 215, 1),
+);
 
 class PlannedActivitiesPage extends StatelessWidget {
   const PlannedActivitiesPage({super.key});
@@ -6,7 +14,27 @@ class PlannedActivitiesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text('atividades planejadas')),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          const PageTitle(title: 'Atividades Planejadas'),
+          Center(
+            child: RichText(
+              textAlign: TextAlign.center,
+              text: const TextSpan(
+                  style:  TextStyle(
+                    color: Colors.black, fontSize: fontSize),
+                    children: [
+                      TextSpan(text: 'Confira os ', style: blackTextStyle),
+                      TextSpan(text: 'cards ', style: blueTextStyle),
+                      TextSpan(text: 'com informações das suas ', style: blackTextStyle),
+                      TextSpan(text: 'atividades planejadas ', style: blueTextStyle),
+                    ]
+                )
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
